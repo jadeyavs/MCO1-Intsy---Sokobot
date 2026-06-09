@@ -3,26 +3,26 @@
 Based on the project specifications and architecture, this guide is divided into four critical phases.
 
 ## Phase 1: Exploration & Environment Setup
-- [ ] **Technical Audit**:
-    - [ ] Run `freeplay.bat` to confirm JDK installation and environment setup.
-    - [ ] Run `sokobot.bat` to observe the baseline bot behavior.
-- [ ] **Data Analysis**:
-    - [ ] Inspect `SokoBot.java` and the `solveSokobanPuzzle` method.
-    - [ ] Map the `mapData` (walls `#`, targets `.`) and `itemsData` (player `@`, crates `$`) arrays.
-- [ ] **Constraint Awareness**:
-    - [ ] Note the **15-second** thinking time limit.
-    - [ ] Confirm output requirement: a string of moves (`u`, `d`, `l`, `r`).
+- [x] **Technical Audit**:
+    - [x] Run `freeplay.bat` to confirm JDK installation and environment setup.
+    - [x] Run `sokobot.bat` to observe the baseline bot behavior.
+- [x] **Data Analysis**:
+    - [x] Inspect `SokoBot.java` and the `solveSokobanPuzzle` method.
+    - [x] Map the `mapData` (walls `#`, targets `.`) and `itemsData` (player `@`, crates `$`) arrays.
+- [x] **Constraint Awareness**:
+    - [x] Note the **15-second** thinking time limit.
+    - [x] Confirm output requirement: a string of moves (`u`, `d`, `l`, `r`).
 
 ## Phase 2: Core Logic & Knowledge Representation
-- [ ] **State Implementation**:
-    - [ ] Create a `State` class to represent crate/player positions.
-    - [ ] Implement `equals()` and `hashCode()` for efficient state tracking.
-- [ ] **Physics Engine**:
-    - [ ] Implement valid move generation (Up, Down, Left, Right).
-    - [ ] Code collision detection (Walls and Crate-on-Crate).
-    - [ ] Implement "push" mechanics (crate moves if space behind is empty).
-- [ ] **Goal Check**:
-    - [ ] Function to identify when all crates are on target positions.
+- [x] **State Representation**: Create a class (e.g., `SokobanState`) to represent a puzzle snapshot.
+    - [x] Store player position `(row, col)`.
+    - [x] Store crate positions (using a data structure like `HashSet<Point>`).
+    - [x] Utilize `mapData` for static elements (walls/targets) during validation.
+    - [x] **Requirements**: Implement `equals()` and `hashCode()` for state identity.
+- [x] **Movement & Transitions**:
+    - [x] Implement `getPossibleMoves()` returning a list of valid child states.
+    - [x] Logic for single-crate pushes and wall collisions.
+    - [x] Goal check: All crates must align with target tiles in `mapData`.
 
 ## Phase 3: AI Solver & Optimization
 - [ ] **Search Strategy**:

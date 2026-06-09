@@ -3,25 +3,25 @@
 This checklist provides a blueprint for creating a Sokoban-like game with an integrated AI solver, based on the `sokobot` architecture.
 
 ## 1. Project Foundation (Starter Integration)
-- [ ] **Language**: Java (JDK required).
-- [ ] **Provided Components** (Do Not Modify):
+- [x] **Language**: Java (JDK required).
+- [x] **Provided Components** (Do Not Modify):
     - `main` package: Execution logic and mode switching.
     - `gui` package: Sprite rendering and grid display.
     - `reader` package: Level loading and `.txt` parsing.
     - `maps/`: Level data files.
-- [ ] **Task Area**: 
+- [x] **Task Area**: 
     - `solver` package: Specifically the `SokoBot` class and `solveSokobanPuzzle` method.
 
 ## 2. Core Game Logic (State Model)
-- [ ] **State Representation**: Create a class (e.g., `SokobanState`) to represent a puzzle snapshot.
-    - [ ] Store player position `(row, col)`.
-    - [ ] Store crate positions (using a data structure like `HashSet<Point>`).
-    - [ ] Utilize `mapData` for static elements (walls/targets) during validation.
-    - [ ] **Requirements**: Implement `equals()` and `hashCode()` for state identity.
-- [ ] **Movement & Transitions**:
-    - [ ] Implement `getPossibleMoves()` returning a list of valid child states.
-    - [ ] Logic for single-crate pushes and wall collisions.
-    - [ ] Goal check: All crates must align with target tiles in `mapData`.
+- [x] **State Representation**: Create a class (e.g., `SokobanState`) to represent a puzzle snapshot.
+    - [x] Store player position `(row, col)`.
+    - [x] Store crate positions (using a data structure like `HashSet<Point>`).
+    - [x] Utilize `mapData` for static elements (walls/targets) during validation.
+    - [x] **Requirements**: Implement `equals()` and `hashCode()` for state identity.
+- [x] **Movement & Transitions**:
+    - [x] Implement `getPossibleMoves()` returning a list of valid child states.
+    - [x] Logic for single-crate pushes and wall collisions.
+    - [x] Goal check: All crates must align with target tiles in `mapData`.
 
 ## 3. AI Solver (Search Algorithm)
 - [ ] **Algorithm**: Implement **A* Search** or **BFS**.
